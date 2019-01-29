@@ -17,6 +17,9 @@
     <properties>
         <selenium.version>3.141.0</selenium.version>
         <testng.version>6.14.3</testng.version>
+        <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
+        <driver-binary-downloader-maven-plugin.version>1.0.17</driver-binary-downloader-maven-plugin.version>
+        <maven-failsafe-plugin.version>3.0.0-M3</maven-failsafe-plugin.version>
     </properties>
 
 </project>
