@@ -11,5 +11,78 @@
 
     <artifactId>regression-tests</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>framework</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>page-objects</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>com.lazerycode.selenium</groupId>
+                <artifactId>driver-binary-downloader-maven-plugin</artifactId>
+                <version>${driver-binary-downloader-maven-plugin.version}</version>
+                <configuration>
+                    <rootStandaloneServerDirectory>${project.basedir}/src/main/resources/selenium_binaries
+                    </rootStandaloneServerDirectory>
+                    <downloadedZipFileDirectory>${project.basedir}/src/main/resources/selenium_zips
+                    </downloadedZipFileDirectory>
+                    <customRepositoryMap>${project.basedir}/src/main/resources/RepositoryMap.xml</customRepositoryMap>
+                    <overwriteFilesThatExist>false</overwriteFilesThatExist>
+                    <onlyGetDriversForHostOperatingSystem>true</onlyGetDriversForHostOperatingSystem>
+                    <fileDownloadRetryAttempts>4</fileDownloadRetryAttempts>
+                    <fileDownloadReadTimeout>30000</fileDownloadReadTimeout>
+                    <operatingSystems>
+                        <windows>true</windows>
+                        <linux>true</linux>
+                        <mac>true</mac>
+                    </operatingSystems>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>selenium</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>${maven-failsafe-plugin.version}</version>
+                <configuration>
+                    <parallel>methods</parallel>
+                    <systemPropertyVariables>
+                        <webdriver.chrome.driver>
+                            ${project.basedir}/src/main/resources/selenium_binaries/osx/googlechrome/64bit/chromedriver
+                        </webdriver.chrome.driver>
+                    </systemPropertyVariables>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <!--This goal makes the build fail if you have test failures-->
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
