@@ -4,7 +4,7 @@ import com.shail.core.BaseTest;
 import com.shail.pages.GoogleHome;
 import org.testng.annotations.Test;
 
-public class testGoogleHome extends BaseTest {
+public class  testGoogleHome extends BaseTest {
 
 
     @Test
