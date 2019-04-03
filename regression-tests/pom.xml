@@ -137,6 +137,11 @@
                 <version>3.0.0-M3</version>
                 <configuration>
                     <useSystemClassLoader>false</useSystemClassLoader>
+                    <systemPropertyVariables>
+                        <webdriver.chrome.driver>
+                            ${project.basedir}/src/main/resources/selenium_binaries/osx/googlechrome/64bit/chromedriver
+                        </webdriver.chrome.driver>
+                    </systemPropertyVariables>
                 </configuration>
 
             </plugin>
