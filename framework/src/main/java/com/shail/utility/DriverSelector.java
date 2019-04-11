@@ -8,7 +8,7 @@ public class DriverSelector {
 
     private WebDriver webDriver;
     private DriverEnum selectedDriverType;
-    private final DriverEnum DEFAULT_DRIVER = DriverEnum.CHROME;
+    private final DriverEnum DEFAULT_DRIVER = DriverEnum.GRIDFOX;
 
 
     /**

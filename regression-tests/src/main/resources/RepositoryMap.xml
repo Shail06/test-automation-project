@@ -153,10 +153,10 @@
             </version>
         </driver>
         <driver id="marionette">
-            <version id="0.20.0">
+            <version id="0.24.0">
                 <bitrate thirtytwobit="true" sixtyfourbit="true">
-                    <filelocation>https://github.com/mozilla/geckodriver/releases/download/v0.20.0/geckodriver-v0.20.0-macos.tar.gz</filelocation>
-                    <hash>87a63f8adc2767332f2eadb24dedff982ac4f902</hash>
+                    <filelocation>https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-macos.tar.gz</filelocation>
+                    <hash>02a5c93ccaf108b1282dc54350b6a3d860fa24d1</hash>
                     <hashtype>sha1</hashtype>
                 </bitrate>
             </version>
