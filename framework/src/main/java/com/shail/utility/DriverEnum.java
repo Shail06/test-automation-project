@@ -37,7 +37,6 @@ public enum DriverEnum implements WebDriverInterface {
         }
     },
 
-
     FIREFOX {
         public WebDriver getWebDriver(MutableCapabilities capabilities) {
             FirefoxOptions options = (FirefoxOptions) capabilities;
@@ -73,9 +72,12 @@ public enum DriverEnum implements WebDriverInterface {
         }
 
         public MutableCapabilities getBrowserOptions() {
-            ChromeOptions options = new ChromeOptions();
-            FirefoxOptions options1 = new FirefoxOptions();
-            return options;
+            ChromeOptions options_ch = new ChromeOptions();
+            //options_ch.addArguments("--no-sandbox");
+            FirefoxOptions options_ff = new FirefoxOptions();
+            //options_ff.setHeadless(true);
+            //options_ch.setHeadless(true);
+            return options_ff;
         }
     };
 }
