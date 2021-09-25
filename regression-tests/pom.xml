@@ -86,9 +86,9 @@
                 <artifactId>driver-binary-downloader-maven-plugin</artifactId>
                 <version>${driver-binary-downloader-maven-plugin.version}</version>
                 <configuration>
-                    <rootStandaloneServerDirectory>${project.basedir}/src/main/resources/selenium_binaries
+                    <rootStandaloneServerDirectory>${project.basedir}/target/selenium_binaries
                     </rootStandaloneServerDirectory>
-                    <downloadedZipFileDirectory>${project.basedir}/src/main/resources/selenium_zips
+                    <downloadedZipFileDirectory>${project.basedir}/target/selenium_zips
                     </downloadedZipFileDirectory>
                     <customRepositoryMap>${project.basedir}/src/main/resources/RepositoryMap.xml</customRepositoryMap>
                     <overwriteFilesThatExist>false</overwriteFilesThatExist>
@@ -117,8 +117,9 @@
                     <parallel>methods</parallel>
                     <systemPropertyVariables>
                         <webdriver.chrome.driver>
-                            ${project.basedir}/src/main/resources/selenium_binaries/osx/googlechrome/64bit/chromedriver
+                            ${project.basedir}/target/selenium_binaries/osx/googlechrome/64bit/chromedriver
                         </webdriver.chrome.driver>
+                        <webdriver.gecko.driver>${project.basedir}/target/selenium_binaries/osx/marionette/64bit/geckodriver</webdriver.gecko.driver>
                     </systemPropertyVariables>
                 </configuration>
                 <executions>
@@ -139,8 +140,9 @@
                     <useSystemClassLoader>false</useSystemClassLoader>
                     <systemPropertyVariables>
                         <webdriver.chrome.driver>
-                            ${project.basedir}/src/main/resources/selenium_binaries/osx/googlechrome/64bit/chromedriver
+                            ${project.basedir}/target/selenium_binaries/osx/googlechrome/64bit/chromedriver
                         </webdriver.chrome.driver>
+                        <webdriver.gecko.driver>${project.basedir}/target/selenium_binaries/osx/marionette/64bit/geckodriver</webdriver.gecko.driver>
                     </systemPropertyVariables>
                 </configuration>
 
